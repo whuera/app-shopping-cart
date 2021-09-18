@@ -1,13 +1,12 @@
 package com.app.mobilpymes.shoppingcart;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ShoppingCartApplicationTests {
-
+class ShoppingCartItemsApplicationTests {
+/*
 	@Test
 	void contextLoads() {
 	}
-
+ */
 }
