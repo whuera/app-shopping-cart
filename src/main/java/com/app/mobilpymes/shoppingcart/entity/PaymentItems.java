@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
@@ -22,11 +23,15 @@ class PaymentItems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotNull
     private String typeCard;
+    @NotNull
     private String numberCard;
+    @NotNull
     private String dateExpired;
+    @NotNull
     private String cvv;
+    @NotNull
     private String statusCard;
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = true)
