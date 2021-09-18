@@ -4,18 +4,20 @@ import com.app.mobilpymes.shoppingcart.entity.Category;
 import com.app.mobilpymes.shoppingcart.entity.Product;
 import com.app.mobilpymes.shoppingcart.repository.ProductRepository;
 import com.app.mobilpymes.shoppingcart.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.app.mobilpymes.shoppingcart.utils.ShoppingCartEnum;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public
 class ProductServiceImpl implements ProductService {
 
-    @Autowired
     private
-    ProductRepository productRepository;
+    final ProductRepository productRepository;
 
     @Override
     public
@@ -33,33 +35,54 @@ class ProductServiceImpl implements ProductService {
     public
     Product createProduct (Product product) {
         if ( !product.equals ( null ) ) {
-            product.setStatus ( "create" );
+            product.setCreateAt ( new Date ( ) );
+            Double priceWithdiscount = product.getDiscount ( ) ? product.getPrice ( ) / 2 : product.getPrice ( );
+            product.setStatus ( ShoppingCartEnum.PRODUCT_CREATE.type );
+            return productRepository.save ( product );
         }
-        return productRepository.save ( product );
+        return null;
     }
 
     @Override
     public
     Product updateProduct (Product product) {
-        return productRepository.save ( product );
+        Product productDB = getProduct ( product.getId ( ) );
+        if ( null == productDB ) {
+            return null;
+        }
+        productDB.setName ( product.getName ( ) );
+        productDB.setDescription ( product.getDescription ( ) );
+        productDB.setCategory ( product.getCategory ( ) );
+        productDB.setPrice ( product.getPrice ( ) );
+        return productRepository.save ( productDB );
     }
 
     @Override
     public
     Product deleteProduct (Long id) {
-
-        return null;
+        Product productDB = getProduct ( id );
+        if ( null == productDB ) {
+            return null;
+        }
+        productDB.setStatus ( ShoppingCartEnum.PRODUCT_DELETE.type );
+        return productRepository.save ( productDB );
     }
 
     @Override
     public
     List < Product > findByCategory (Category category) {
-        return null;
+        return productRepository.findByCategory ( category );
     }
 
     @Override
     public
     Product updateStock (Long id, Double quantity) {
-        return null;
+        Product productDB = getProduct ( id );
+        if ( null == productDB ) {
+            return null;
+        }
+        Double stock = productDB.getStock ( ) + quantity;
+        productDB.setStock ( stock );
+        return productRepository.save ( productDB );
     }
 }

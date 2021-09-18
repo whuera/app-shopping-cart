@@ -25,6 +25,8 @@ public class Product {
     private Double stock;
     private Double price;
     private String status;
+    private Boolean discount;
+    private String imageProduct;
 
     @Column(name = "create_at")
     @Temporal(TemporalType.TIMESTAMP)
