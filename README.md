@@ -23,4 +23,14 @@ Shopping cart (CRUD)
 | Controllers | <img width="705" alt="Captura de Pantalla 2021-09-17 a la(s) 23 26 01" src="https://user-images.githubusercontent.com/20179546/133872388-413b0ad5-4f3d-4ed1-a935-227374b23a03.png"> |
 | Services | <img width="600" alt="Captura de Pantalla 2021-09-17 a la(s) 23 30 42" src="https://user-images.githubusercontent.com/20179546/133872490-e2783a07-bb16-444a-b4d9-0e14724ba66e.png"> |
 
+**AWS Deploy**
+
+Despliegue del docker, usando ECS / fargate, en 2 Clusters:
+[Cluster 1]: Backend microservices-shopping-cart.jar
+[Cluster 2]: BDD Mysql
+
+| AWS / Console |
+| -- |
+| <img width="691" alt="Captura de Pantalla 2021-09-17 a la(s) 23 33 31" src="https://user-images.githubusercontent.com/20179546/133872626-c4bd1a3e-8e7a-4462-aa9c-cad2c30bffb2.png"> |
+
 
