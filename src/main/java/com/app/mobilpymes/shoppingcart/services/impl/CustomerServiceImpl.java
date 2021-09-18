@@ -4,18 +4,18 @@ import com.app.mobilpymes.shoppingcart.entity.Customer;
 import com.app.mobilpymes.shoppingcart.repository.CustomerRepository;
 import com.app.mobilpymes.shoppingcart.services.CustomerService;
 import com.app.mobilpymes.shoppingcart.utils.ShoppingCartEnum;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public
 class CustomerServiceImpl implements CustomerService {
 
-    @Autowired
     private
-    CustomerRepository customerRepository;
+    final CustomerRepository customerRepository;
 
     @Override
     public
@@ -23,13 +23,8 @@ class CustomerServiceImpl implements CustomerService {
         if ( null == customer ) {
             return null;
         }
-        Customer customerDB = getCustomer ( customer.getId ( ) );
-        if ( !customerDB.equals ( null ) ) {
             customer.setStatus ( ShoppingCartEnum.CUSTOMER_CREATE.type );
             return customerRepository.save ( customer );
-        } else {
-            return null;
-        }
     }
 
     @Override

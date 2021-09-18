@@ -37,6 +37,7 @@ class ProductServiceImpl implements ProductService {
         if ( !product.equals ( null ) ) {
             product.setCreateAt ( new Date ( ) );
             Double priceWithdiscount = product.getDiscount ( ) ? product.getPrice ( ) / 2 : product.getPrice ( );
+            product.setPrice ( priceWithdiscount );
             product.setStatus ( ShoppingCartEnum.PRODUCT_CREATE.type );
             return productRepository.save ( product );
         }
