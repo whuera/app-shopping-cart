@@ -1,6 +1,6 @@
 # app-shopping-cart
 
-**Breve Descripcón**
+**Breve Descripción**
 
 Backend en Java (1.8), plataforma spring-boot / microservicios
 implementación conceptual, para un shopping cart (ecommerce)
@@ -33,6 +33,17 @@ Despliegue del docker, usando ECS / fargate, en 2 Clusters:
 | -- |
 | <img width="691" alt="Captura de Pantalla 2021-09-17 a la(s) 23 33 31" src="https://user-images.githubusercontent.com/20179546/133872626-c4bd1a3e-8e7a-4462-aa9c-cad2c30bffb2.png"> |
 | -- |
+
+**Front Test**
+
+Frontend para test de microservicios, realizado en react y con deploy continuo en [AWS / Amplify / S3]
+
+| Escenario | Pantalla |
+| -- | -- |
+| Web / Desktop | ![2021-09-18 00_08_14-Shopping-cart](https://user-images.githubusercontent.com/20179546/133873594-4d636bf6-9498-47b5-8fa2-fcea278c60c5.png) |
+| Mobile | ![2021-09-18 00_08_55-Shopping-cart](https://user-images.githubusercontent.com/20179546/133873600-195f5451-4db7-43b0-b5b5-2cf88a79883b.png) |
+| -- | --|
+
 
 **Pruebas a Microservicios**
 
