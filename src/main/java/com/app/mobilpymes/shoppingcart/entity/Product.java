@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -19,13 +20,19 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotNull
     private String name;
+    @NotNull
     private String description;
+    @NotNull
     private Double stock;
+    @NotNull
     private Double price;
+
     private String status;
+    @NotNull
     private Boolean discount;
+    @NotNull
     private String imageProduct;
 
     @Column(name = "create_at")

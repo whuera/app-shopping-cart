@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -29,8 +30,9 @@ class Checkout {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createAt;
-
+    @NotNull
     private String uuid;
+    @NotNull
     private String idSession;
 
     @ManyToOne
@@ -40,7 +42,7 @@ class Checkout {
     @ManyToOne
     @JoinColumn(name = "cart_id")
     private CartItems cartItems;
-
+    @NotNull
     private Double payment;
 
     @ManyToOne
