@@ -32,5 +32,14 @@ Despliegue del docker, usando ECS / fargate, en 2 Clusters:
 | AWS / Console |
 | -- |
 | <img width="691" alt="Captura de Pantalla 2021-09-17 a la(s) 23 33 31" src="https://user-images.githubusercontent.com/20179546/133872626-c4bd1a3e-8e7a-4462-aa9c-cad2c30bffb2.png"> |
+| -- |
+
+**Pruebas a Microservicios**
+
+Postman Collection
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/9ec544985e92f9346e55)
+
+
 
 
