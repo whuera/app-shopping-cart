@@ -36,7 +36,7 @@ Despliegue del docker, usando ECS / fargate, en 2 Clusters:
 
 **Pruebas a Microservicios**
 
-Postman Collection
+Postman Collection (descargarse el plugin para chrome de [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=es-419))
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/9ec544985e92f9346e55)
 
