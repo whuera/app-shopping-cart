@@ -1,5 +1,8 @@
 # app-shopping-cart
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/from-referrer/)
+[![Werft.dev - Gitpod CI](https://img.shields.io/badge/Werft.dev-CI--builds-green)](https://werft.gitpod-dev.com/)
+
 **Breve Descripción**
 
 Backend en Java (1.8), plataforma spring-boot / microservicios
