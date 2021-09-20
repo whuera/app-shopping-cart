@@ -2,9 +2,9 @@ name: image-shopping-cart
 
 on:
   push:
-    branches: [ master ]
+    branches: master
   pull_request:
-    branches: [ master ]
+    branches: master
 
 jobs:
 
