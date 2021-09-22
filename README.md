@@ -58,6 +58,18 @@ Postman Collection (descargarse el plugin para chrome de [Postman](https://chrom
 
 https://dbdesigner.page.link/wiYMfaRsBra3hPsV9
 
+**Integración Continua**
+
+FrontEnd: AWS Amplify
+BackEnd: Azure Microsoft
+
+| Platform | Actions |
+| -- | -- |
+|AWS |<img width="691" alt="Captura de Pantalla 2021-09-17 a la(s) 23 33 31" src="https://user-images.githubusercontent.com/20179546/134389504-c1720f29-fa57-436f-b8ad-2b30cd0dd1cb.png"> |
+| Azure | <img width="672" alt="Captura de Pantalla 2021-09-22 a la(s) 12 03 09" src="https://user-images.githubusercontent.com/20179546/134389673-df9cbe04-f9c5-4bd6-893f-0d3a86a457f5.png"> |
+
+
+
 
 
 
