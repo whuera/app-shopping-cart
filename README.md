@@ -41,6 +41,8 @@ Despliegue del docker, usando ECS / fargate, en 2 Clusters:
 
 Frontend para test de microservicios, realizado en react y con deploy continuo en [AWS / Amplify / S3]
 
+Url: (https://main.d2mnbsq68cet5d.amplifyapp.com/)
+
 | Escenario | Pantalla |
 | -- | -- |
 | Web / Desktop | ![2021-09-18 00_08_14-Shopping-cart](https://user-images.githubusercontent.com/20179546/133873594-4d636bf6-9498-47b5-8fa2-fcea278c60c5.png) |
