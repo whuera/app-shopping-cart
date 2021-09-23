@@ -1,5 +1,6 @@
 package com.app.mobilpymes.shoppingcart.controllers;
 
+import com.app.mobilpymes.shoppingcart.dto.CheckOutDto;
 import com.app.mobilpymes.shoppingcart.entity.CartItem;
 import com.app.mobilpymes.shoppingcart.entity.Customer;
 import com.app.mobilpymes.shoppingcart.services.CartItemsService;
@@ -57,6 +58,13 @@ class ShoppingController {
         CartItem cartItemCreate = cartItemsService.createCartShopping ( cartItem );
         return ResponseEntity.status ( HttpStatus.CREATED ).body ( cartItemCreate );
 
+    }
+
+    @GetMapping("/checkout")
+    public
+    ResponseEntity < CheckOutDto > getCheckout (@RequestParam(name = "customerId", required = true) Long customerId) {
+        Customer customerBD = customerService.getCustomer ( customerId );
+        return ResponseEntity.ok ( cartItemsService.generateCheckout ( customerBD ) );
     }
 
 }

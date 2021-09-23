@@ -5,6 +5,7 @@ import com.app.mobilpymes.shoppingcart.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 import java.util.List;
 
 @Repository
@@ -13,4 +14,5 @@ interface CartItemsRepository extends JpaRepository < CartItem, Long > {
     public
     List < CartItem > findByCustomer (Customer customer);
 
+    Collection < Object > findAllById (Long id);
 }

@@ -4,14 +4,15 @@ import com.app.mobilpymes.shoppingcart.entity.CartItem;
 import com.app.mobilpymes.shoppingcart.entity.Customer;
 
 import java.util.Date;
+import java.util.List;
 
 public
 class CheckOutDto {
-    private
+    public
     Customer customer;
-    private String sessionId;
-    private String status;
-    private
-    CartItem cartItem;
-    private Date dateCreateChechout;
+    public String sessionId;
+    public String status;
+    public
+    List < CartItem > cartItem;
+    public Date dateCreateChechout;
 }
