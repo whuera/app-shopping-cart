@@ -45,6 +45,12 @@ class ProductServiceImpl implements ProductService {
         return null;
     }
 
+    private
+    Double getProductPrice (Product product) {
+        Double priceWithdiscount = product.getDiscount ( ) ? product.getPrice ( ) / DISCOUNT_VALUE : product.getPrice ( );
+        return priceWithdiscount;
+    }
+
     @Override
     public
     Product updateProduct (Product product) {
@@ -54,8 +60,12 @@ class ProductServiceImpl implements ProductService {
         }
         productDB.setName ( product.getName ( ) );
         productDB.setDescription ( product.getDescription ( ) );
+        productDB.setDiscount ( product.getDiscount ( ) );
+        productDB.setImageProduct ( product.getImageProduct ( ) );
+        productDB.setStock ( product.getStock ( ) );
         productDB.setCategory ( product.getCategory ( ) );
-        productDB.setPrice ( product.getPrice ( ) );
+        productDB.setPrice ( getProductPrice ( product ) );
+        productDB.setStatus ( ShoppingCartEnum.PRODUCT_UPDATE.type );
         return productRepository.save ( productDB );
     }
 
