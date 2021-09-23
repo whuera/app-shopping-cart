@@ -41,11 +41,11 @@ class Checkout {
 
     @ManyToOne
     @JoinColumn(name = "cart_id")
-    private CartItems cartItems;
+    private CartItem cartItem;
     @NotNull
     private Double payment;
 
     @ManyToOne
     @JoinColumn(name = "card_id")
-    private PaymentItems card;
+    private PaymentItem card;
 }

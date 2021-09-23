@@ -11,15 +11,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "PaymentItems")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public
-class PaymentItems {
+class PaymentItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,6 +35,7 @@ class PaymentItems {
     private String cvv;
     @NotNull
     private String statusCard;
+
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = true)
     private Customer customer;

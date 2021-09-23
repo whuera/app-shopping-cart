@@ -1,5 +1,6 @@
 package com.app.mobilpymes.shoppingcart.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,8 +38,9 @@ class Customer {
     private String imageCustomer;
     private String status;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, mappedBy = "customer")
-    private List < PaymentItems > paymentItemsSet;
+    private List < PaymentItem > paymentItemSet;
 
 }

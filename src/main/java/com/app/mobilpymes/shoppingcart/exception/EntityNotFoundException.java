@@ -4,7 +4,7 @@ public
 class EntityNotFoundException extends RuntimeException {
 
     public
-    EntityNotFoundException ( ) {
+    EntityNotFoundException (Long id) {
     }
 
     public

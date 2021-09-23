@@ -43,4 +43,6 @@ public class Product {
     @JoinColumn(name = "category_id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Category category;
+
+
 }

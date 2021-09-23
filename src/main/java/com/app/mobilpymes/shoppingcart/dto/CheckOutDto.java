@@ -1,6 +1,6 @@
 package com.app.mobilpymes.shoppingcart.dto;
 
-import com.app.mobilpymes.shoppingcart.entity.CartItems;
+import com.app.mobilpymes.shoppingcart.entity.CartItem;
 import com.app.mobilpymes.shoppingcart.entity.Customer;
 
 import java.util.Date;
@@ -12,6 +12,6 @@ class CheckOutDto {
     private String sessionId;
     private String status;
     private
-    CartItems cartItems;
+    CartItem cartItem;
     private Date dateCreateChechout;
 }

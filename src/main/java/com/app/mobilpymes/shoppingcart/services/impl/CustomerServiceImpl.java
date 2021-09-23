@@ -1,6 +1,7 @@
 package com.app.mobilpymes.shoppingcart.services.impl;
 
 import com.app.mobilpymes.shoppingcart.entity.Customer;
+import com.app.mobilpymes.shoppingcart.exception.EntityNotFoundException;
 import com.app.mobilpymes.shoppingcart.repository.CustomerRepository;
 import com.app.mobilpymes.shoppingcart.services.CustomerService;
 import com.app.mobilpymes.shoppingcart.utils.ShoppingCartEnum;
@@ -52,7 +53,7 @@ class CustomerServiceImpl implements CustomerService {
     @Override
     public
     Customer getCustomer (Long id) {
-        return customerRepository.findById ( id ).orElse ( null );
+        return customerRepository.findById ( id ).orElseThrow ( ( ) -> new EntityNotFoundException ( id ) );
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.app.mobilpymes.shoppingcart.services;
 
-import com.app.mobilpymes.shoppingcart.entity.CartItems;
+import com.app.mobilpymes.shoppingcart.entity.CartItem;
 import com.app.mobilpymes.shoppingcart.entity.Customer;
 
 import java.util.List;
@@ -8,5 +8,8 @@ import java.util.List;
 public
 interface CartItemsService {
     public
-    List < CartItems > listCartItems (Customer customer);
+    List < CartItem > listCartItems (Customer customer);
+
+    public
+    CartItem createCartShopping (CartItem cartItem);
 }

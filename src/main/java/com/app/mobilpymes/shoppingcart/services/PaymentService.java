@@ -1,24 +1,24 @@
 package com.app.mobilpymes.shoppingcart.services;
 
-import com.app.mobilpymes.shoppingcart.entity.PaymentItems;
+import com.app.mobilpymes.shoppingcart.entity.PaymentItem;
 
 import java.util.List;
 
 public
 interface PaymentService {
     public
-    List < PaymentItems > listAllCards ( );
+    List < PaymentItem > listAllCards ( );
 
     public
-    PaymentItems getCardById (Long id);
+    PaymentItem getCardById (Long id);
 
     public
-    PaymentItems createPaymentCard (PaymentItems paymentItems);
+    PaymentItem createPaymentCard (PaymentItem paymentItem);
 
     public
-    PaymentItems updatePaymentCard (PaymentItems paymentItems);
+    PaymentItem updatePaymentCard (PaymentItem paymentItem);
 
     public
-    PaymentItems deletePaymentCard (Long idCard);
+    PaymentItem deletePaymentCard (Long idCard);
 
 }
