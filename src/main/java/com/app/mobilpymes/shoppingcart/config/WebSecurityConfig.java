@@ -8,18 +8,21 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Arrays;
 
 
 @EnableWebSecurity
 public
-class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+class WebSecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
 
     @Override
     protected
     void configure (HttpSecurity http) throws Exception {
         http.cors ( ).and ( );
+        http.csrf ( ).disable ( );
         //other config
     }
 
@@ -27,10 +30,16 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     CorsConfigurationSource corsConfigurationSource ( ) {
         CorsConfiguration configuration = new CorsConfiguration ( );
         configuration.setAllowedOrigins ( Arrays.asList ( "https://main.d2mnbsq68cet5d.amplifyapp.com" ) );
-        configuration.setAllowedMethods ( Arrays.asList ( "GET", "POST" ) );
+        configuration.setAllowedMethods ( Arrays.asList ( "GET", "POST", "PUT" ) );
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource ( );
         source.registerCorsConfiguration ( "/**", configuration );
         return source;
+    }
+
+    @Override
+    public
+    void addCorsMappings (CorsRegistry registry) {
+        registry.addMapping ( "/**" ).allowedMethods ( "*" );
     }
 }
 
