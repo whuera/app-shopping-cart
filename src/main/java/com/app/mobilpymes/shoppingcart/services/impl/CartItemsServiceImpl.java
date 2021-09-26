@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -62,9 +63,17 @@ class CartItemsServiceImpl implements CartItemsService {
     @Override
     public
     List < CartItem > getCartItemByCustomerId (Long id) {
-        return cartItemsRepository.findAll ( ).stream ( )
-                .filter ( cartItem -> cartItem.getCustomer ( ).getId ( ).equals ( id ) )
+        List < CartItem > cartItemList = new ArrayList <> ( );
+
+        cartItemsRepository.findAll ( ).stream ( )
+                .filter ( cartItem -> cartItem.getCustomer ( ).getId ( ) == id )
+                .map ( cartItem -> {
+                    CartItem cartItemObject = new CartItem ( );
+                    cartItemObject.setProduct ( cartItem.getProduct ( ) );
+                    return cartItemList.add ( cartItemObject );
+                } )
                 .collect ( Collectors.toList ( ) );
 
+        return cartItemList;
     }
 }
