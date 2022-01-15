@@ -6,13 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -37,6 +31,8 @@ class Customer {
     private String phoneNumber;
     private String imageCustomer;
     private String status;
+    @Transient
+    private String statusListObserver;
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL,
