@@ -49,7 +49,7 @@ class CustomerController {
     @PutMapping(value = "/{id}")
     public
     ResponseEntity < Customer > updateCustomer (@PathVariable("id") Long id, @RequestBody Customer customer) {
-        customer.setId ( id );
+        //customer.setId ( id );
         Customer customerDB = customerService.updateCustomer ( customer );
 
         if ( customerDB == null ) {

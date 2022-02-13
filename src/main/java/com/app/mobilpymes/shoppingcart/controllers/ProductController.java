@@ -59,7 +59,7 @@ class ProductController {
                 return ResponseEntity.noContent ( ).build ( );
             }
         } else {
-            products = productService.findByCategory ( Category.builder ( ).id ( categoryId ).build ( ) );
+           // products = productService.findByCategory ( Category.builder ( ).id ( categoryId ).build ( ) );
             if ( products.isEmpty ( ) ) {
                 return ResponseEntity.notFound ( ).build ( );
             }
@@ -91,7 +91,7 @@ class ProductController {
     @PutMapping(value = "/{id}")
     public
     ResponseEntity < Product > updateProduct (@PathVariable("id") Long id, @RequestBody Product product) {
-        product.setId ( id );
+        //product.setId ( id );
         Product productDB = productService.updateProduct ( product );
         if ( productDB == null ) {
             return ResponseEntity.notFound ( ).build ( );

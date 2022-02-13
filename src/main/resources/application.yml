@@ -8,12 +8,29 @@ logging:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: User2021
-    url: jdbc:mysql://52.14.105.126/ecommerce
-    username: root
+    password: Weho1976
+    #url: jdbc:mysql://52.14.105.126/ecommerce
+    url: jdbc:mysql://azure-mysql-server.mysql.database.azure.com:3306/ecommerce
+    #username: root
+    username: whuera@azure-mysql-server
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       database-platform: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
+  management:
+    endpoints:
+      web:
+        base-path:"/actuator"
+    endpoint:
+      health:
+        show-details: ALWAYS
+    security:
+      enabled: false
+  info:
+    build:
+      encoding: utf-8
+  spring:
+      application:
+        name: "Demo Cart"

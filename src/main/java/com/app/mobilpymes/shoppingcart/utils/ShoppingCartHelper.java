@@ -22,9 +22,9 @@ class ShoppingCartHelper {
                     return error;
 
                 } ).collect ( Collectors.toList ( ) );
-        ErrorMessage errorMessage = ErrorMessage.builder ( )
-                .code ( "01" )
-                .messages ( errors ).build ( );
+        ErrorMessage errorMessage = new ErrorMessage (  );
+        //errorMessage.setCode ( "01" );
+        //errorMessage.setMessages ( errors );
         ObjectMapper mapper = new ObjectMapper ( );
         String jsonString = "";
         try {
