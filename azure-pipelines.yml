@@ -5,11 +5,8 @@
 trigger:
 - master
 
-resources:
-- repo: self
-
-variables:
-  tag: '$(Build.BuildId)'
+pool:
+  vmImage: ubuntu-latest
 
 stages:
 - task: Maven@3
@@ -19,6 +16,7 @@ stages:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
