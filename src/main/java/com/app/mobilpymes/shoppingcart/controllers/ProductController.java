@@ -59,7 +59,7 @@ class ProductController {
                 return ResponseEntity.noContent ( ).build ( );
             }
         } else {
-           // products = productService.findByCategory ( Category.builder ( ).id ( categoryId ).build ( ) );
+            // products = productService.findByCategory ( Category.builder ( ).id ( categoryId ).build ( ) );
             if ( products.isEmpty ( ) ) {
                 return ResponseEntity.notFound ( ).build ( );
             }

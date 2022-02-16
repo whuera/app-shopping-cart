@@ -1,6 +1,6 @@
 package com.app.mobilpymes.shoppingcart.utils;
 
-import com.app.mobilpymes.shoppingcart.controllers.ErrorMessage;
+import com.app.mobilpymes.shoppingcart.exception.ErrorMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.validation.BindingResult;

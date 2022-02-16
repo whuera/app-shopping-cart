@@ -1,4 +1,4 @@
-package com.app.mobilpymes.shoppingcart.controllers;
+package com.app.mobilpymes.shoppingcart.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
