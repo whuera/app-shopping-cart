@@ -25,4 +25,11 @@ steps:
   inputs:
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(eea5b4fd-8b0c-433c-b02b-555e85f3ccc7)'
+    appType: 'webAppLinux'
+    WebAppName: 'app-shopping-cart-with-terraform'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
       
