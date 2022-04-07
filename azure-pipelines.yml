@@ -12,7 +12,7 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'sc-dockerhub'
-  imageRepository: 'image-shopping-cart'
+  imageRepository: 'whuera/image-shopping-cart'
   containerRegistry: 'whuera'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
