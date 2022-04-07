@@ -11,12 +11,12 @@ pool:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'aksdevopsacrpd'
-  imageRepository: 'app1nginxaks'
-  containerRegistry: 'aksdevopsacrpd.azurecr.io'
+  dockerRegistryServiceConnection: 'sc-dockerhub'
+  imageRepository: 'image-shopping-cart'
+  containerRegistry: 'whuera'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'aksdevopsacrpd1755e8d5-auth'
+  # imagePullSecret: 'aksdevopsacrpd1755e8d5-auth'
 
 steps:
 - task: Maven@3
