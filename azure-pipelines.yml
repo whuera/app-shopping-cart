@@ -15,7 +15,8 @@ variables:
   imageRepository: 'whuera/image-shopping-cart'
   containerRegistry: 'whuera'
   dockerfilePath: '**/Dockerfile'
-  tag: '$(Build.BuildId)'
+  # tag: '$(Build.BuildId)'
+  tag: 'latest'
   # imagePullSecret: 'aksdevopsacrpd1755e8d5-auth'
 
 steps:
