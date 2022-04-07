@@ -7,6 +7,16 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  
+variables:
+
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'aksdevopsacrpd'
+  imageRepository: 'app1nginxaks'
+  containerRegistry: 'aksdevopsacrpd.azurecr.io'
+  dockerfilePath: '**/Dockerfile'
+  tag: '$(Build.BuildId)'
+  imagePullSecret: 'aksdevopsacrpd1755e8d5-auth'
 
 steps:
 - task: Maven@3
