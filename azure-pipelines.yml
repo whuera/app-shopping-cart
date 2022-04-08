@@ -42,4 +42,8 @@ steps:
     containerRegistry: $(dockerRegistryServiceConnection)
     tags: |
       $(tag)
+
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: 'latest'
       
