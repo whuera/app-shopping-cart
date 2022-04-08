@@ -55,3 +55,8 @@ steps:
     backendAzureRmStorageAccountName: 'scpoc'
     backendAzureRmContainerName: 'poc-container'
     backendAzureRmKey: 'terraformdev.tfstate'
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'sc-poc-terraform'
