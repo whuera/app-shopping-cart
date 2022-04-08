@@ -46,4 +46,12 @@ steps:
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: 'latest'
-
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'sc-poc-terraform'
+    backendAzureRmResourceGroupName: 'rg-basic'
+    backendAzureRmStorageAccountName: 'scpoc'
+    backendAzureRmContainerName: 'poc-container'
+    backendAzureRmKey: 'terraformdev.tfstate'
