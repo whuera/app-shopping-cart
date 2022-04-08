@@ -59,4 +59,5 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform-Poc-CI/drop/Terraform'
     environmentServiceNameAzureRM: 'sc-poc-terraform'
