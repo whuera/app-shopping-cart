@@ -55,9 +55,3 @@ steps:
     backendAzureRmStorageAccountName: 'scpoc'
     backendAzureRmContainerName: 'poc-container'
     backendAzureRmKey: 'terraformdev.tfstate'
-- task: TerraformTaskV2@2
-  inputs:
-    provider: 'azurerm'
-    command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform-Poc-CI/drop/Terraform'
-    environmentServiceNameAzureRM: 'sc-poc-terraform'
