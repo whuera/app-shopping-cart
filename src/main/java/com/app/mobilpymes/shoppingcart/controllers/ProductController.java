@@ -3,6 +3,7 @@ package com.app.mobilpymes.shoppingcart.controllers;
 import com.app.mobilpymes.shoppingcart.entity.Category;
 import com.app.mobilpymes.shoppingcart.entity.Product;
 import com.app.mobilpymes.shoppingcart.services.CategoryService;
+import com.app.mobilpymes.shoppingcart.services.ErrorControlService;
 import com.app.mobilpymes.shoppingcart.services.ProductService;
 import com.app.mobilpymes.shoppingcart.utils.ShoppingCartHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,10 @@ class ProductController {
     private
     CategoryService categoryService;
 
+    @Autowired
+    private
+    ErrorControlService errorControlService;
+
     @GetMapping
     public
     String healthPage ( ) {
@@ -46,6 +51,7 @@ class ProductController {
     @GetMapping("/products")
     public
     ResponseEntity < List < Product > > getAllProducts ( ) {
+        errorControlService.getData ( );
         return ResponseEntity.ok ( productService.listAllProduct ( ) );
     }
 
