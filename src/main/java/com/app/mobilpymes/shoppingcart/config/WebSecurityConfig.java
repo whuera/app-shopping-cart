@@ -29,7 +29,7 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcCo
     @Bean
     CorsConfigurationSource corsConfigurationSource ( ) {
         CorsConfiguration configuration = new CorsConfiguration ( );
-        configuration.setAllowedOrigins ( Arrays.asList ( "https://main.d2mnbsq68cet5d.amplifyapp.com" ) );
+        configuration.setAllowedOrigins ( Arrays.asList ( "https://main.d2mnbsq68cet5d.amplifyapp.com", "https://calm-rock-0d0c8e20f.1.azurestaticapps.net" ) );
         configuration.setAllowedMethods ( Arrays.asList ( "GET", "POST", "PUT" ) );
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource ( );
         source.registerCorsConfiguration ( "/**", configuration );
