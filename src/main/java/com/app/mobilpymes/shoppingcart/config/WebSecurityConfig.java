@@ -39,7 +39,10 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcCo
     @Override
     public
     void addCorsMappings (CorsRegistry registry) {
-        registry.addMapping ( "/**" ).allowedMethods ( "GET", "POST", "PUT", "DELETE" ).allowedOrigins ( "*" ).allowedHeaders ( "*" );
+        registry.addMapping ( "/**" )
+                .allowedMethods ( "GET", "POST", "PUT", "DELETE" )
+                .allowedOrigins ( "*" )
+                .allowedHeaders ( "*" );
     }
 }
 
