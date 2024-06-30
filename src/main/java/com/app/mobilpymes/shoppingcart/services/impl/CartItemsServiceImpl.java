@@ -72,7 +72,6 @@ class CartItemsServiceImpl implements CartItemsService {
                     return cartItemList.add ( cartItemObject );
                 } )
                 .collect ( Collectors.toList ( ) );
-
         return cartItemList;
     }
 }
