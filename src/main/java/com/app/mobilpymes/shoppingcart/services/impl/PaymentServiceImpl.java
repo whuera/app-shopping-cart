@@ -38,6 +38,12 @@ class PaymentServiceImpl implements PaymentService {
         return paymentItemsRepository.save ( paymentItem );
     }
 
+    /**
+        * Updates the payment card information for a given payment item.
+        *
+        * @param paymentItem The payment item containing the updated card information.
+        * @return The updated payment item with the new card information.
+        */
     @Override
     public
     PaymentItem updatePaymentCard (PaymentItem paymentItem) {
@@ -45,12 +51,12 @@ class PaymentServiceImpl implements PaymentService {
         if ( null == paymentItemDB ) {
             return null;
         }
-        paymentItemDB.setNumberCard ( paymentItem.getNumberCard ( ) );
-        paymentItemDB.setCvv ( paymentItem.getCvv ( ) );
-        paymentItemDB.setDateExpired ( paymentItem.getDateExpired ( ) );
-        paymentItemDB.setTypeCard ( paymentItem.getTypeCard ( ) );
-        paymentItemDB.setCustomer ( paymentItem.getCustomer ( ) );
-        return paymentItemsRepository.save ( paymentItemDB );
+        paymentItemDB.setNumberCard(paymentItem.getNumberCard());
+        paymentItemDB.setCvv(paymentItem.getCvv());
+        paymentItemDB.setDateExpired(paymentItem.getDateExpired());
+        paymentItemDB.setTypeCard(paymentItem.getTypeCard());
+        paymentItemDB.setCustomer(paymentItem.getCustomer());
+        return paymentItemsRepository.save(paymentItemDB);
     }
 
     @Override
