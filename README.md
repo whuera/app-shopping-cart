@@ -17,6 +17,7 @@ Customers (CRUD)
 Products (CRUD)
 Checkout (CRUD)
 Shopping cart (CRUD)
+Repo: https://github.com/whuera/app-shopping-cart
 
 **Diagramas**
 
